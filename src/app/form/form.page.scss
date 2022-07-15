@@ -11,6 +11,7 @@ button {
     right: var(--corner-distance);
     bottom: var(--corner-distance);
     transition: transform 0.5s ease-in-out;
+    z-index: 100;
 }
 button:hover {
     transform: rotate(180deg);
