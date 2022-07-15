@@ -10,6 +10,10 @@ button {
     position: fixed;
     right: var(--corner-distance);
     bottom: var(--corner-distance);
+    transition: transform 0.5s ease-in-out;
+}
+button:hover {
+    transform: rotate(180deg);
 }
 button:active {
     background-color: #1f1f1f;
