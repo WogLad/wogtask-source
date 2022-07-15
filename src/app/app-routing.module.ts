@@ -11,8 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
   },
   {
+    path: 'form',
+    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
+  },
+  {
     path: '',
-    redirectTo: 'home',
+    // redirectTo: 'home',
+    redirectTo: 'form',
     pathMatch: 'full'
   },
 ];

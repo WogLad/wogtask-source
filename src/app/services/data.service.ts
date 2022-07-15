@@ -25,7 +25,7 @@ export class DataService {
       subject: 'Long time no chat',
       date: '6:12 AM',
       id: 1,
-      read: false
+      read: true
     },
     {
       fromName: 'Jordan Firth',
