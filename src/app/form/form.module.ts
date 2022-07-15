@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FormPageRoutingModule } from './form-routing.module';
 
 import { FormPage } from './form.page';
+import { TaskComponentModule } from '../task/task.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FormPageRoutingModule
+    FormPageRoutingModule,
+    TaskComponentModule
   ],
   declarations: [FormPage]
 })

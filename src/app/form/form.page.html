@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-header>
   <form (ngSubmit)="parseTodoForm()">
     <ion-item>
       <ion-label>Title:</ion-label>
@@ -19,26 +19,21 @@
     <ion-item>
       <ion-label>Type:</ion-label>
       <ion-select [(ngModel)]="todo.type" name="type">
-        <ion-select-option *ngFor="let type of taskTypes">{{ type }}</ion-select-option>
+        <ion-select-option *ngFor="let type of taskTypes" [value]="type">{{ type }}</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <button ion-button type="submit" block>➕</button>
+    <button ion-button type="submit" block>
+      <ion-icon title="Add Task" name="add-circle"></ion-icon>
+    </button>
   </form>
+</ion-header>
 
-  <br>
+<br>
 
-  <!-- (TODO): Make all the tasks display as a list (ion-list). -->
+<ion-content [fullscreen]="true">
+  <!-- (DONE): Make all the tasks display as a list (ion-list). -->
   <ion-list>
-    <!-- <div *ngFor="let task of taskList">
-      {{ task.title }}
-      <br>
-      {{ task.description }}
-      <br>
-      {{ task.type }}
-      <br>
-      <br>
-    </div> -->
-    
+    <app-task *ngFor="let task of taskList" [task]="task"></app-task>
   </ion-list>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Task {
+export interface Task {
   title: string;
   description: string;
   type: string;
@@ -41,6 +41,7 @@ export class FormPage {
   parseTodoForm() {
     // console.log(this.todo);
     this.taskList.push(this.todo as Task);
+    this.todo = {};
     console.log(this.taskList);
   }
 }
