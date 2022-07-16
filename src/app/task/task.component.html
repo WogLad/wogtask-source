@@ -1,15 +1,19 @@
 <ion-item>
-  <!-- (TODO): Make a tick box for the task that modifies the data in the "taskList" list. -->
+  <!-- (DONE): Make a tick box for the task that modifies the data in the "taskList" list. -->
   <ion-label class="ion-text-wrap">
-    <h2>
-      {{ task.title }}
-      <span class="date">
-        <ion-note>{{ task.type }}</ion-note>
-        <ion-icon name="chevron-forward" size="small"></ion-icon>
-      </span>
+    <h2 style="display: flex; justify-content: space-between;">
+        <div style="display: flex; align-items: center;">
+          <ion-checkbox [(ngModel)]="task.completed" (ionChange)="statusChange($event, task.title)"></ion-checkbox>
+          <div class="checkbox-separator"></div>
+          {{ task.title }}
+        </div>
+        <span class="date">
+          <ion-note>{{ task.type }}</ion-note>
+          <ion-icon name="chevron-forward" size="small"></ion-icon>
+        </span>
     </h2>
     <p>
-      {{ task.description}}
+      {{ task.description }}
     </p>
   </ion-label>
 </ion-item>

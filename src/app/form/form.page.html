@@ -34,6 +34,6 @@
 <ion-content [fullscreen]="true">
   <!-- (DONE): Make all the tasks display as a list (ion-list). -->
   <ion-list>
-    <app-task *ngFor="let task of taskList" [task]="task"></app-task>
+    <app-task *ngFor="let task of taskList; let i = index" [task]="task" [id]="i"></app-task>
   </ion-list>
 </ion-content>

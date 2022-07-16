@@ -57,3 +57,10 @@ ion-footer ion-title {
   font-size: 11px;
   font-weight: normal;
 }
+
+.ios .checkbox-separator {
+  width: 0;
+}
+.md .checkbox-separator {
+  width: 7px;
+}
