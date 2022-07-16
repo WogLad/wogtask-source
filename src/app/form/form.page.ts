@@ -40,6 +40,7 @@ export class FormPage {
 
   parseTodoForm() {
     // console.log(this.todo);
+    if ((this.todo as Task).title == undefined) {return}
     this.taskList.push(this.todo as Task);
     this.todo = {};
     console.log(this.taskList);
