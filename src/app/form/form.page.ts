@@ -15,8 +15,6 @@ export interface Task {
   styleUrls: ['./form.page.scss'],
 })
 export class FormPage {
-  constructor(private alertController: AlertController) {}
-
   taskList: Task[] = [
     {
       id: 0,
@@ -40,7 +38,12 @@ export class FormPage {
       completed: false
     },
   ];
-  
+
+  constructor(private alertController: AlertController) {
+    // (DONE): Load the list of tasks from the localStorage into the Task List.
+    this.taskList = JSON.parse(localStorage.getItem("taskList"));
+  }
+
   taskTypes: string[] = [
     "Home",
     "Work",
@@ -57,6 +60,8 @@ export class FormPage {
     this.taskList.push(this.todo as Task);
     this.todo = {};
     console.log(this.taskList);
+
+    localStorage.setItem("taskList", JSON.stringify(this.taskList));
   }
 
   async presentErrorAlert() {
